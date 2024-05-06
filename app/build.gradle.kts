@@ -21,6 +21,9 @@ dependencies {
     implementation("info.picocli:picocli:4.7.5")
     annotationProcessor("info.picocli:picocli-codegen:4.7.5")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly("org.projectlombok:lombok:1.18.32")
+
 
 
 }
