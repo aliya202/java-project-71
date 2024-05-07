@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-import static hexlet.code.Differ.parse;
+import static hexlet.code.Differ.generate;
 
 @Command(name = "gendiff",
         description = "Compares two configuration files and shows a difference.")
@@ -64,6 +64,6 @@ public class App implements Callable {
     }
 
     public static Map getData(String content) throws JsonProcessingException {
-        return parse(content);
+        return generate();
     }
 }
