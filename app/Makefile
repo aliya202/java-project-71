@@ -3,7 +3,11 @@ run-dist:
 	gradle clean installDist
 	./build/install/app/bin/app
 
-report:
+test:
+	./gradlew test
+
+report1:
+	./gradlew clean
 	./gradlew jacocoTestReport
 
 lint:
