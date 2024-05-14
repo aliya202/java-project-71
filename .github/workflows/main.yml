@@ -17,7 +17,7 @@ jobs:
         with:
           gradle-version: 8.7
           arguments: build
-          build-root-directory: app/build.gradle.kts
+          build-root-directory: ./app
       - run: ./gradlew checkstyleMain
       - run: ./gradlew test
       - name: Publish code coverage
