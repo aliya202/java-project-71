@@ -4,7 +4,7 @@ run-dist:
 	./build/install/app/bin/app
 
 report:
-	./gradlew jacocoTestReport
+	./gradlew test jacocoTestReport --debug
 
 lint:
 	./gradlew checkstyleMain

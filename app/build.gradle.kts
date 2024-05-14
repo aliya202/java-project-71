@@ -23,21 +23,30 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
     compileOnly("org.projectlombok:lombok:1.18.32")
 
+}
 
-
+jacoco {
+    toolVersion = "0.8.12"
 }
 
 tasks.test {
     useJUnitPlatform()
+    enabled = true
+    finalizedBy(tasks.jacocoTestReport)
 }
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required = true
+        csv.required = true
+        html.required = true
+        html.outputLocation = layout.buildDirectory.dir("jacocoHtml")
+    }
+}
+
+
 
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
-}
-
-tasks.test {
-    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
-}
-tasks.jacocoTestReport {
-    dependsOn(tasks.test) // tests are required to run before generating the report
 }
