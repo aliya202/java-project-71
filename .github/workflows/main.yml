@@ -21,6 +21,7 @@ jobs:
       - run: ./gradlew checkstyleMain
         working-directory: ./app
       - run: ./gradlew test
+        working-directory: ./app
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
