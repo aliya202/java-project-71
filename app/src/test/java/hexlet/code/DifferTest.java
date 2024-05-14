@@ -1,16 +1,21 @@
 package hexlet.code;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferTest {
 
     @Test
-    public void differStylishTest1() throws Exception {
-        String filepath4 = "src/test/resources/filepath4.json";
-        String filepath5 = "src/test/resources/filepath5.json";
+    public void differStylishTest() throws JsonProcessingException {
         String format = "stylish";
-
-        Assertions.assertEquals(1, 1);
+        String filepath1 = "src/test/resources/files/file1.json";
+        String filepath2 = "src/test/resources/files/file2.json";
+        String actual = App.getData(filepath1, filepath2);
+        String expectedTwoCorrectFiles = "{- follow=false, host=hexlet.io, - proxy=123.234.53.22, - timeout=50," +
+                " + timeout=20, + verbose=true}";
+        assertEquals(expectedTwoCorrectFiles, actual);
     }
 }

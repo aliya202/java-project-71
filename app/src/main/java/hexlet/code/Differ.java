@@ -4,6 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -16,6 +20,14 @@ class Differ {
         TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
         };
 
+        Path writeFilePath1 = Paths.get(file1);
+        Path writeFilePath2 = Paths.get(file2);
+        try {
+            file1 = Files.readString(writeFilePath1);
+            file2 = Files.readString(writeFilePath2);
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
         HashMap<String, Object> firstFile = mapper.readValue(file1, typeRef);
         HashMap<String, Object> secondFile = mapper.readValue(file2, typeRef);
         Map<String, Object> resultMap = new LinkedHashMap<>();
