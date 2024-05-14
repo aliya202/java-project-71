@@ -25,11 +25,6 @@ dependencies {
 
 }
 
-jacoco {
-    toolVersion = "0.8.12"
-    applyTo(tasks.run.get())
-}
-
 tasks.test {
     useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport)
@@ -38,8 +33,6 @@ tasks.test {
 tasks.jacocoTestReport {
     reports {
         xml.required = true
-        csv.required = true
-        html.required = true
     }
 }
 
