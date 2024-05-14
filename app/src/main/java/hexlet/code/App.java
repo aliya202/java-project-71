@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
 import java.util.concurrent.Callable;
 
 import static hexlet.code.Differ.generate;
@@ -20,8 +19,6 @@ import static hexlet.code.Differ.generate;
         description = "Compares two configuration files and shows a difference.")
 @Setter
 public class App implements Callable {
-    public static String file1;
-    public static String file2;
 
     @Parameters(index = "0", description = "path to first file", paramLabel = "filepath1")
     private String filepath1;
@@ -47,23 +44,26 @@ public class App implements Callable {
     }
 
     public static void main(String... args) throws JsonProcessingException {
-        Path writeFilePath1 = Paths.get("/Users/AliyaKhisamova/IdeaProjects/java-project-71/app/src/test/resources/files/file1.json");
-        Path writeFilePath2 = Paths.get("/Users/AliyaKhisamova/IdeaProjects/java-project-71/app/src/test/resources/files/file2.json");
 
+        CommandLine commandLine = new CommandLine(new App());
+        commandLine.usage(System.out);
+        Path writeFilePath1 = Paths.get("app/src/test/resources/files/file1.json");
+        Path writeFilePath2 = Paths.get("app/src/test/resources/files/file2.json");
+
+        String file1;
+        String file2;
         try {
             file1 = Files.readString(writeFilePath1);
             file2 = Files.readString(writeFilePath2);
         } catch (IOException e) {
             throw new RuntimeException();
         }
-
-        getData("");
-        CommandLine commandLine = new CommandLine(new App());
-        commandLine.usage(System.out);
+        String data = getData(file1, file2);
+        System.out.println(data);
 
     }
 
-    public static Map getData(String content) throws JsonProcessingException {
-        return generate();
+    public static String getData(String file1, String file2) throws JsonProcessingException {
+        return generate(file1, file2);
     }
 }
