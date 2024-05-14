@@ -6,7 +6,7 @@ run-dist:
 test:
 	./gradlew test
 
-report1:
+report:
 	./gradlew clean
 	./gradlew jacocoTestReport
 
