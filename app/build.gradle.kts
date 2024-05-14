@@ -27,13 +27,7 @@ dependencies {
 
 jacoco {
     toolVersion = "0.8.12"
-    reportsDirectory = layout.buildDirectory.dir("customJacocoReportDir")
     applyTo(tasks.run.get())
-}
-
-tasks.register<JacocoReport>("applicationCodeCoverageReport") {
-    executionData(tasks.run.get())
-    sourceSets(sourceSets.main.get())
 }
 
 tasks.test {

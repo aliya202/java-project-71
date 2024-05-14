@@ -12,7 +12,5 @@ public class DifferTest {
         String format = "stylish";
 
         Assertions.assertEquals(1, 1);
-
-
     }
 }

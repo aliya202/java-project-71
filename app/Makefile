@@ -7,7 +7,6 @@ test:
 	./gradlew test
 
 report:
-	./gradlew clean
 	./gradlew jacocoTestReport
 
 lint:
