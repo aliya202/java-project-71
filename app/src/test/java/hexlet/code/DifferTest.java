@@ -9,7 +9,6 @@ public class DifferTest {
 
     @Test
     public void differStylishTest() throws JsonProcessingException {
-        String format = "stylish";
         String filepath1 = "src/test/resources/files/file1.json";
         String filepath2 = "src/test/resources/files/file2.json";
         String actual = Differ.generate(filepath1, filepath2);
