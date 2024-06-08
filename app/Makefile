@@ -1,7 +1,22 @@
 #Makefile
+.DEFAULT_GOAL := build-run
+
+clean:
+	./gradlew clean
+
+build:
+	./gradlew clean build
+
+run:
+	./gradlew run --args="-h"
+
 run-dist:
-	gradle clean installDist
+	./gradlew clean
+	./gradlew installDist
 	./build/install/app/bin/app
+
+lint:
+	./gradlew checkstyleMain checkstyleTest
 
 test:
 	./gradlew test
@@ -9,5 +24,12 @@ test:
 report:
 	./gradlew jacocoTestReport
 
-lint:
-	./gradlew checkstyleMain
+install:
+	./gradlew clean install
+
+check-updates:
+	./gradlew dependencyUpdates
+
+build-run: build run
+
+.PHONY: build
