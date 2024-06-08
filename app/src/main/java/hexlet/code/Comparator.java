@@ -6,8 +6,8 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Differences {
-    public static Map<String, Key> makeDifference(Map<String, Object> firstMap, Map<String, Object> secondMap) {
+public class Comparator {
+    public static Map<String, Key> compareDifference(Map<String, Object> firstMap, Map<String, Object> secondMap) {
         Map<String, Key> result = new LinkedHashMap<>();
         Set<String> keySet = new TreeSet<>(firstMap.keySet());
         keySet.addAll(secondMap.keySet());

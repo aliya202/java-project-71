@@ -7,7 +7,9 @@ import java.util.Map;
 
 public class Plain {
     public static String format(Map<String, Key> differ) {
+
         StringBuilder str = new StringBuilder();
+
         for (Map.Entry<String, Key> element : differ.entrySet()) {
             String status = element.getValue().getStatus();
             String key = element.getKey();
