@@ -27,9 +27,6 @@ report:
 install:
 	./gradlew clean install
 
-check-updates:
-	./gradlew dependencyUpdates
-
 build-run: build run
 
 .PHONY: build
