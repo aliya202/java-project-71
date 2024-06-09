@@ -7,3 +7,14 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b8fbdda2faee4f61a9bc/test_coverage)](https://codeclimate.com/github/aliya202/java-project-71/test_coverage)
 
+
+## "Difference Calculator"
+Difference calculator is a program that determines the difference between two data structures.
+
+### Utility features:
+
+Supports different input formats: yaml and json.
+Generats a report as a plain, stylish and json formats.
+
+### Recording:
+![first.gif](app%2Fsrc%2Fmain%2Fresources%2Fasciinema%2Ffirst.gif)
