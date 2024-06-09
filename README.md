@@ -17,4 +17,5 @@ Supports different input formats: yaml and json.
 Generats a report as a plain, stylish and json formats.
 
 ### Recording:
-![first.gif](app%2Fsrc%2Fmain%2Fresources%2Fasciinema%2Ffirst.gif)
+
+![first.gif](/Users/AliyaKhisamova/IdeaProjects/java-project-71/app/src/main/resources/first.gif)
