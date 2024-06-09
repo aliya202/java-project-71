@@ -18,4 +18,4 @@ Generats a report as a plain, stylish and json formats.
 
 ### Recording:
 
-![first.gif](/Users/AliyaKhisamova/IdeaProjects/java-project-71/app/src/main/resources/first.gif)
+![first.gif](app/src/main/resources/first.gif)
